@@ -84,8 +84,7 @@ boxes = boxes.replace(-1000000.0, -np.inf)
 
 # Only keep the boxes that have the same label as the test point
 boxes = boxes[boxes['class'] == label]
-
-#print('Number of boxes:', boxes.shape[0])
+print('Number of boxes:', boxes.shape[0])
 
 rob = calculate_robustness(coordinates, cov, boxes)
 

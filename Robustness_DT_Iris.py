@@ -7,6 +7,7 @@ from Functions import create_box_thresholds
 from Functions import boxes_with_labels
 from Functions import create_covariance_matrix
 from Functions import calculate_robustness
+from Functions import calculate_numerical_robustness
 
 # Some fixed values
 seed = 123
@@ -59,6 +60,10 @@ print('Number of boxes:', boxes.shape[0])
 # Result
 rob = calculate_robustness(coordinates, cov, boxes)
 print('Robustness of the datapoint ' + str(coordinates) + ': ' + str(rob))
+
+# Result
+rob = calculate_numerical_robustness(coordinates, cov, boxes, tree_num_features)
+print('Robustness of the datapoint ' + str(coordinates) + ' with numerical integration: ' + str(rob))
 
 import scipy.special as sc
 
