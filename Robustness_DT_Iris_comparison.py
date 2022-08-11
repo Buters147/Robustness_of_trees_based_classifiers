@@ -71,13 +71,13 @@ for i in range(len(X_test)):
 
     r=0
     # We take the boxes where 99% of the surface is reached
-    while (sc.gammainc(tree_num_features/2, r**2/2) < 0.6):
+    while (sc.gammainc(tree_num_features/2, r**2/2) < 0.99):
         r+=1
 
     # Eliminate the boxes that are outside of the 99% confidence ellipse
-    for i in range(tree_num_features):
-        boxes = boxes[boxes['T'+str(i+1)]>=coordinates[i]-r*np.sqrt(cov[i][i])]
-        boxes = boxes[boxes['B'+str(i+1)]<=coordinates[i]+r*np.sqrt(cov[i][i])]
+    for a in range(tree_num_features):
+        boxes = boxes[boxes['T'+str(a+1)]>=coordinates[a]-r*np.sqrt(cov[a][a])]
+        boxes = boxes[boxes['B'+str(a+1)]<=coordinates[a]+r*np.sqrt(cov[a][a])]
         
     print('Number of boxes:', boxes.shape[0])
 
