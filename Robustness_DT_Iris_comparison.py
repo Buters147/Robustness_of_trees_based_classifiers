@@ -50,8 +50,8 @@ for i in range(len(X_test)):
     boxes = boxes_with_labels(tree_num_features, BOX)
 
     # Determine the label for each box (here we subtract 0.01 to make sure we get the right label)
-    boxes['class'] = clf.predict(boxes[list(boxes.columns[1::2])]-0.01)
-    #boxes['class'] = clf.predict(boxes[list(boxes.columns[1::2])])
+    #boxes['class'] = clf.predict(boxes[list(boxes.columns[1::2])]-0.01)
+    boxes['class'] = clf.predict(1/2*(boxes.values[:,1::2] + boxes.values[:,:-1:2]))
 
     # Expand the boxes to infinity in both directions
     boxes = boxes.replace(1000000.0, np.inf)
