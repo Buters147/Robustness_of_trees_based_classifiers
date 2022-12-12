@@ -168,6 +168,6 @@ for t in range(X_test.shape[0]):
     #    rob = 1
         
     ROB.append(rob)
-    print('Robustness of the datapoint ' + str(mean_t) + ': ' + str(rob))
+    print('Robustness of the datapoint ' + '[' + str(loc_1) + ', ' + str(loc_2) + ', ' + str(loc_3) + ', ' + str(loc_4) + ']: ' + str(rob))
     print()
    
