@@ -3,6 +3,13 @@ This repository stores codes to quantify the probabilistic robustness of tree-ba
 
 The classifiers are trained on the Iris and MNIST dataset. The probabilistic robustness of data samples of tree-based classifiers with a distortion given as a continuous  multivariate probability distributions is computed.
 
+Required Libraries outside of standard libraries:
+
+- Quadpy
+- tensorflow
+- opencv
+- xgboost
+
 Files: 
 
 - Functions.py contains all functions to execute the computations
