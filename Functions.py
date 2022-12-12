@@ -107,6 +107,7 @@ def calculate_robustness(coord, covariance_matrix, boxes):
 
     return rob_fast            
 
+
 def calculate_numerical_robustness(coord, covariance_matrix, boxes, dim):
     val_all = []
     scheme = quadpy.cn.stroud_cn_5_4(dim)
